@@ -12,7 +12,6 @@ Install the dependencies and devDependencies and start the server.
 cd statamic-mia
 composer i
 npm i
-php artisan serve
 ```
 
 
