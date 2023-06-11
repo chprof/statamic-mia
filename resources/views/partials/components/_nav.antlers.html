@@ -1,0 +1,9 @@
+<nav class="nav nav_primary">
+  <ul>
+    {{ nav:collection:pages include_home="true" }}
+      <li class="{{ is_current ?= 'active' }}">
+        <a href="{{ url }}">{{ title }}</a>
+      </li>
+    {{ /nav:collection:pages }}
+  </ul>
+</nav>

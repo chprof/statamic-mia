@@ -1,0 +1,90 @@
+<header class="header header_primary">
+  <div class="header__head">
+    <div class="header__head-container container">
+      <div class="header__head-row">
+        <div class="header__head-contacts">
+
+          {{ if customization:site_company_phone_number }}
+            <a class="link link_phone" href="tel:+{{ customization:site_company_phone_number | sanitize }}">
+              <svg class="svg-icon">
+                <use xlink:href="/img/svgSprite.svg#icon-phone"></use>
+              </svg>
+              {{ if customization:site_company_phone_label }}
+                <span>{{ customization:site_company_phone_label | sanitize }}</span>
+              {{ /if }}
+            </a>
+          {{ /if }}
+
+          <a class="link link_callback" href="#" data-bs-toggle="modal" data-bs-target="#callback">Заказать звонок</a>
+
+        </div>
+
+
+        <div class="header__head-socials">
+
+          {{ if customization:site_company_email }}
+            <a class="link link_phone" href="mailto:{{ customization:site_company_email | sanitize }}">
+              <svg class="svg-icon">
+                <use xlink:href="/img/svgSprite.svg#icon-envelope"></use>
+              </svg>
+              <span>{{ customization:site_company_email | sanitize }}</span>
+            </a>
+          {{ /if }}
+
+          {{ if customization:site_company_telegram }}
+            <a class="link link_social" href="https://t.me/{{ customization:site_company_telegram | sanitize }}">
+              <svg class="svg-icon">
+                <use xlink:href="/img/svgSprite.svg#icon-tg"></use>
+              </svg>
+            </a>
+          {{ /if }}
+
+          {{ if customization:site_company_whatsapp }}
+            <a class="link link_social" href="https://wa.me/{{ customization:site_company_whatsapp | sanitize }}">
+              <svg class="svg-icon">
+                <use xlink:href="/img/svgSprite.svg#icon-wa"></use>
+              </svg>
+            </a>
+          {{ /if }}
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="header__main">
+    <div class="header__main-container container">
+      <div class="header__main-row">
+
+        {{ partial:partials/components/logo :url="customization:site_logo_primary" }}
+
+        <div class="offcanvas offcanvas_primary offcanvas-start" tabindex="-1" id="menu" aria-labelledby="menuLabel">
+          <div class="offcanvas-header">
+            <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            {{ partial:partials/components/nav }}
+          </div>
+        </div>
+
+        <div class="header__main-btn">
+          <a class="btn btn_primary" href="#" data-bs-toggle="modal" data-bs-target="#callback">
+            <svg class="svg-icon">
+              <use xlink:href="/img/svgSprite.svg#icon-phone"></use>
+            </svg><span>Заказать звонок</span>
+          </a>
+        </div>
+
+        <button class="header__menu-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu"
+          aria-controls="menu">
+          <svg class="svg-icon">
+            <use xlink:href="/img/svgSprite.svg#icon-menu"></use>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+  </div>
+</header>

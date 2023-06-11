@@ -1,0 +1,145 @@
+tabs:
+  site_layout_settings:
+    display: 'Layout settings'
+    sections:
+      -
+        display: Logo
+        fields:
+          -
+            handle: site_logo_primary
+            field:
+              max_files: 1
+              mode: list
+              container: assets
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Site Logo Primary'
+              icon: assets
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+          -
+            handle: site_logo_secondary
+            field:
+              max_files: 1
+              mode: list
+              container: assets
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Site Logo Secondary'
+              icon: assets
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+      -
+        display: 'Contacts phone'
+        fields:
+          -
+            handle: site_company_phone_label
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Site Company Phone Label'
+              icon: text
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+          -
+            handle: site_company_phone_number
+            field:
+              input_type: tel
+              antlers: false
+              type: text
+              display: 'Site Company Phone number'
+              icon: text
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+      -
+        display: 'Contacts emaiil'
+        fields:
+          -
+            handle: site_company_email
+            field:
+              input_type: email
+              antlers: false
+              type: text
+              display: 'Site Company Email'
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+      -
+        display: 'Contacts Messengers'
+        fields:
+          -
+            handle: site_company_telegram
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Site Company Telegram'
+              icon: text
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+          -
+            handle: site_company_whatsapp
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Site Company Whatsapp'
+              icon: text
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+  site_layout_popups:
+    display: Popups
+    sections:
+      -
+        display: 'Popup Callback'
+        fields:
+          -
+            handle: popup_callback_title
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Popup Callback Title'
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+          -
+            handle: popup_callback_form
+            field:
+              max_items: 1
+              type: form
+              display: 'Popup Callback Form'
+              icon: form
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false

@@ -1,0 +1,6 @@
+title: Недвижимость
+preview_targets:
+  -
+    label: Term
+    url: '{permalink}'
+    refresh: true

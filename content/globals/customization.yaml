@@ -1,0 +1,11 @@
+title: Кастомизация
+data:
+  site_logo_primary: logo.svg
+  site_logo_secondary: logo2.svg
+  site_company_phone_label: '+7 (980) 900-89-86'
+  site_company_phone_number: '79809008986'
+  site_company_email: mia-homes@yandex.ru
+  site_company_telegram: '#'
+  site_company_whatsapp: '#'
+  popup_callback_title: 'Заказать звонок'
+  popup_callback_form: callback

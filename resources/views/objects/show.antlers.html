@@ -1,0 +1,88 @@
+<div class="layout__inner">
+  <div class="container">
+    <div class="layout__object">
+      <h1>Двухкомнатная квартира от собственника в районе Авсаллар</h1>
+      <div class="layout__object-row row g-4">
+        <div class="layout__object-col layout__object-col_gallery col-lg-8">
+          {{ if gallery }}
+            <div class="layout__object-gallery">
+              <div class="carousel carousel_gallery swiper" data-element="carousel-gallery">
+                <div class="swiper-wrapper">
+                  {{ gallery }}
+                    <div class="swiper-slide">
+                      <a href="{{ url | sanitize }}" data-fancybox="gallery"> <img src="{{ url | sanitize }}"></a>
+                    </div>
+                  {{ /gallery }}
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+              <div class="carousel carousel_thumbs swiper" data-element="carousel-thumbs">
+                <div class="swiper-wrapper">
+                  {{ gallery }}
+                    <div class="swiper-slide">
+                      <img src="{{ url | sanitize }}">
+                    </div>
+                  {{ /gallery }}
+
+                </div>
+              </div>
+            </div>
+          {{ /if }}
+          <div class="layout__object-head">
+            {{ if price }}
+              <div class="layout__object-price"> <span>Цена от:</span><strong>{{ price }} €</strong></div>
+            {{ /if }}
+          </div>
+          <div class="layout__object-info">
+            <h3>Краткая информация</h3>
+            <div class="layout__object-info-list row row-cols-1 row-cols-xxl-2 g-3">
+              {{ if object_id }}
+                <div class="layout__object-info-item col">
+                  <div class="layout__object-info-label">ID объекта:</div>
+                  <div class="layout__object-info-value">{{ object_id | sanitize  }}</div>
+                </div>
+              {{ /if }}
+              <div class="layout__object-info-item col">
+                <div class="layout__object-info-label">Город:</div>
+                <div class="layout__object-info-value">{{ cities }} {{ title | sanitize }} {{ /cities }}</div>
+              </div>
+              <div class="layout__object-info-item col">
+                <div class="layout__object-info-label">Район:</div>
+                <div class="layout__object-info-value">{{ districts }} {{ title | sanitize }} {{ /districts }}</div>
+              </div>
+              <div class="layout__object-info-item col">
+                <div class="layout__object-info-label">Комнат:</div>
+                <div class="layout__object-info-value">{{ rooms }} {{ title | sanitize }} {{ /rooms }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="layout__object-info">
+
+            <h3>Инфраструктура объекта</h3>
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-3 g-3">
+
+              {{ infrastructure }}
+
+               <div class="col">
+                  <div class="block block_check">
+                    <div class="block__icon">
+                          <svg class="svg-icon">
+                            <use xlink:href="/img/svgSprite.svg#icon-check"></use>
+                          </svg>
+                    </div><span class="block__text">{{ title | sanitize }}</span>
+                  </div>
+                </div>
+
+              {{ /infrastructure }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layout__description">
+      {{ content }}
+    </div>
+  </div>
+</div>

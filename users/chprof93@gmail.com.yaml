@@ -1,0 +1,12 @@
+super: true
+name: chprof
+avatar: img-avatar.png
+id: 58d52f11-6213-4056-a413-c7c73793d95f
+password_hash: $2y$10$LHE4z3/6eprLiWWWVFRNVuIH9eV3HzdJVFMZrbxYhfmqCWc.XWmsG
+preferences:
+  collections:
+    objects:
+      after_save: continue_editing
+  assets:
+    assets:
+      mode: grid

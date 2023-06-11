@@ -1,0 +1,22 @@
+<section class="section section_advantage">
+  <div class="container">
+    {{ if section_advantage_secondary_title }}
+      <h2>{{ section_advantage_secondary_title | sanitize }}</h2>
+    {{ /if }}
+
+    {{ if section_advantages_secondary_list }}
+      <div class="section__content">
+        <div class="section__row-content row row-cols-1 row-cols-sm-2 gy-4 gy-xxl-5 gx-4">
+
+          {{ section_advantages_secondary_list }}
+            <div class="section__col-content col">
+              <h4>{{ title }}</h4>
+              <p>{{ content }}</p>
+            </div>
+          {{ /section_advantages_secondary_list }}
+
+        </div>
+      </div>
+    {{ /if }}
+  </div>
+</section>

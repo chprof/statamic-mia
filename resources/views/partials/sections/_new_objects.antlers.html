@@ -1,0 +1,418 @@
+<section class="section section_new-objects">
+  <div class="container">
+    {{ if section_new_objects_title }}
+      <h2>{{ section_new_objects_title | sanitize }}</h2>
+    {{ /if }}
+
+    {{ if section_new_objects_terms }}
+
+      <div class="section__links">
+
+        {{ section_new_objects_terms }}
+
+          <a class="btn btn_third active" data-tax="{{ handle }}" data-term="{{ handle }}" href="{{ url }}">Все типы</a>
+
+          {{ taxonomy from="{{ handle }}" scope="term" }}
+            <a class="btn btn_third" data-tax="{{handle}}" data-term="{{ slug }}" href="{{ url }}">{{ title }}</a>
+
+          {{ /taxonomy  }}
+
+        {{ /section_new_objects_terms }}
+
+      </div>
+
+    {{ /if }}
+
+
+
+    {{ if section_new_objects_terms }}
+
+      <div class="section__row row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-2">
+
+        {{ section_new_objects_terms }}
+
+
+          {{ taxonomy from="{{ handle }}" }}
+
+            {{ if entries_count !== 0 }}
+
+              {{ entries scope="post" }}
+
+                <div class="section__col d-flex flex-column">
+
+                  {{ partial:partials/components/card-object }}
+
+                </div>
+
+              {{ /entries }}
+
+            {{ else }}
+                <p>Нет записей</p>
+            {{ /if }}
+
+
+          {{ /taxonomy  }}
+
+        {{ /section_new_objects_terms }}
+
+      </div>
+
+    {{ /if }}
+
+
+    {{# <div class="section__row row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-2">
+      <div class="section__col">
+        <div class="card card_object">
+          <div class="card__img"> <img src="/img/img-category2.jpg" alt=""></div>
+          <div class="card__body">
+            <h3>Двухкомнатная квартира от собственника в районе Авсаллар</h3>
+            <div class="card__attributes">
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-pin"></use>
+                  </svg>
+                </div>
+                <div class="block__value">Алания / Авсаллар </div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-expand"></use>
+                  </svg><span>Площадь:</span>
+                </div>
+                <div class="block__value">48 м<sup>2 </sup></div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-bed"></use>
+                  </svg><span>Комнат:</span>
+                </div>
+                <div class="block__value">1+1</div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-waves"></use>
+                  </svg><span>До моря:</span>
+                </div>
+                <div class="block__value">1100 м</div>
+              </div>
+            </div>
+            <div class="card__price">99 000 €</div>
+            <div class="card__body-foot"> <a class="btn btn_secondary" href="#">Подробнее</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="section__col">
+        <div class="card card_object">
+          <div class="card__img"> <img src="/img/img-category1.jpg" alt=""></div>
+          <div class="card__body">
+            <h3>Двухкомнатная квартира от собственника в районе Авсаллар</h3>
+            <div class="card__attributes">
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-pin"></use>
+                  </svg>
+                </div>
+                <div class="block__value">Алания / Авсаллар </div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-expand"></use>
+                  </svg><span>Площадь:</span>
+                </div>
+                <div class="block__value">48 м<sup>2 </sup></div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-bed"></use>
+                  </svg><span>Комнат:</span>
+                </div>
+                <div class="block__value">1+1</div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-waves"></use>
+                  </svg><span>До моря:</span>
+                </div>
+                <div class="block__value">1100 м</div>
+              </div>
+            </div>
+            <div class="card__price">99 000 €</div>
+            <div class="card__body-foot"> <a class="btn btn_secondary" href="#">Подробнее</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="section__col">
+        <div class="card card_object">
+          <div class="card__img"> <img src="/img/img-category3.jpg" alt=""></div>
+          <div class="card__body">
+            <h3>Двухкомнатная квартира от собственника в районе Авсаллар</h3>
+            <div class="card__attributes">
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-pin"></use>
+                  </svg>
+                </div>
+                <div class="block__value">Алания / Авсаллар </div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-expand"></use>
+                  </svg><span>Площадь:</span>
+                </div>
+                <div class="block__value">48 м<sup>2 </sup></div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-bed"></use>
+                  </svg><span>Комнат:</span>
+                </div>
+                <div class="block__value">1+1</div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-waves"></use>
+                  </svg><span>До моря:</span>
+                </div>
+                <div class="block__value">1100 м</div>
+              </div>
+            </div>
+            <div class="card__price">99 000 €</div>
+            <div class="card__body-foot"> <a class="btn btn_secondary" href="#">Подробнее</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="section__col">
+        <div class="card card_object">
+          <div class="card__img"> <img src="/img/img-category4.jpg" alt=""></div>
+          <div class="card__body">
+            <h3>Двухкомнатная квартира от собственника в районе Авсаллар</h3>
+            <div class="card__attributes">
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-pin"></use>
+                  </svg>
+                </div>
+                <div class="block__value">Алания / Авсаллар </div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-expand"></use>
+                  </svg><span>Площадь:</span>
+                </div>
+                <div class="block__value">48 м<sup>2 </sup></div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-bed"></use>
+                  </svg><span>Комнат:</span>
+                </div>
+                <div class="block__value">1+1</div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-waves"></use>
+                  </svg><span>До моря:</span>
+                </div>
+                <div class="block__value">1100 м</div>
+              </div>
+            </div>
+            <div class="card__price">99 000 €</div>
+            <div class="card__body-foot"> <a class="btn btn_secondary" href="#">Подробнее</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="section__col">
+        <div class="card card_object">
+          <div class="card__img"> <img src="/img/img-category2.jpg" alt=""></div>
+          <div class="card__body">
+            <h3>Двухкомнатная квартира от собственника в районе Авсаллар</h3>
+            <div class="card__attributes">
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-pin"></use>
+                  </svg>
+                </div>
+                <div class="block__value">Алания / Авсаллар </div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-expand"></use>
+                  </svg><span>Площадь:</span>
+                </div>
+                <div class="block__value">48 м<sup>2 </sup></div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-bed"></use>
+                  </svg><span>Комнат:</span>
+                </div>
+                <div class="block__value">1+1</div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-waves"></use>
+                  </svg><span>До моря:</span>
+                </div>
+                <div class="block__value">1100 м</div>
+              </div>
+            </div>
+            <div class="card__price">99 000 €</div>
+            <div class="card__body-foot"> <a class="btn btn_secondary" href="#">Подробнее</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="section__col">
+        <div class="card card_object">
+          <div class="card__img"> <img src="/img/img-category1.jpg" alt=""></div>
+          <div class="card__body">
+            <h3>Двухкомнатная квартира от собственника в районе Авсаллар</h3>
+            <div class="card__attributes">
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-pin"></use>
+                  </svg>
+                </div>
+                <div class="block__value">Алания / Авсаллар </div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-expand"></use>
+                  </svg><span>Площадь:</span>
+                </div>
+                <div class="block__value">48 м<sup>2 </sup></div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-bed"></use>
+                  </svg><span>Комнат:</span>
+                </div>
+                <div class="block__value">1+1</div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-waves"></use>
+                  </svg><span>До моря:</span>
+                </div>
+                <div class="block__value">1100 м</div>
+              </div>
+            </div>
+            <div class="card__price">99 000 €</div>
+            <div class="card__body-foot"> <a class="btn btn_secondary" href="#">Подробнее</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="section__col">
+        <div class="card card_object">
+          <div class="card__img"> <img src="/img/img-category3.jpg" alt=""></div>
+          <div class="card__body">
+            <h3>Двухкомнатная квартира от собственника в районе Авсаллар</h3>
+            <div class="card__attributes">
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-pin"></use>
+                  </svg>
+                </div>
+                <div class="block__value">Алания / Авсаллар </div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-expand"></use>
+                  </svg><span>Площадь:</span>
+                </div>
+                <div class="block__value">48 м<sup>2 </sup></div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-bed"></use>
+                  </svg><span>Комнат:</span>
+                </div>
+                <div class="block__value">1+1</div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-waves"></use>
+                  </svg><span>До моря:</span>
+                </div>
+                <div class="block__value">1100 м</div>
+              </div>
+            </div>
+            <div class="card__price">99 000 €</div>
+            <div class="card__body-foot"> <a class="btn btn_secondary" href="#">Подробнее</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="section__col">
+        <div class="card card_object">
+          <div class="card__img"> <img src="/img/img-category4.jpg" alt=""></div>
+          <div class="card__body">
+            <h3>Двухкомнатная квартира от собственника в районе Авсаллар</h3>
+            <div class="card__attributes">
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-pin"></use>
+                  </svg>
+                </div>
+                <div class="block__value">Алания / Авсаллар </div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-expand"></use>
+                  </svg><span>Площадь:</span>
+                </div>
+                <div class="block__value">48 м<sup>2 </sup></div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-bed"></use>
+                  </svg><span>Комнат:</span>
+                </div>
+                <div class="block__value">1+1</div>
+              </div>
+              <div class="block block_attribute">
+                <div class="block__name">
+                  <svg class="svg-icon">
+                    <use xlink:href="/img/svgSprite.svg#icon-waves"></use>
+                  </svg><span>До моря:</span>
+                </div>
+                <div class="block__value">1100 м</div>
+              </div>
+            </div>
+            <div class="card__price">99 000 €</div>
+            <div class="card__body-foot"> <a class="btn btn_secondary" href="#">Подробнее</a></div>
+          </div>
+        </div>
+      </div>
+    </div> #}}
+  </div>
+</section>

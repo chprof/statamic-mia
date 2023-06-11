@@ -1,0 +1,26 @@
+<section class="section section_faq">
+  <div class="container">
+    {{ if section_faq_title }}
+      <h2>{{ section_faq_title }}</h2>
+    {{ /if }}
+
+    {{ if section_faq_list }}
+      <div class="accordion accordion_faq" id="accordionFaq">
+        {{ i = 0 }}
+        {{ section_faq_list }}
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{{ i }}">
+              <button class="accordion-button {{ i !== 0 ?= 'collapsed' }}" type="button" data-bs-toggle="collapse"
+                data-bs-target="#accordion-collapse-{{ i }}" aria-expanded="{{ i === 0 ?= 'true' }}" aria-controls="accordion-collapse-{{ i }}">{{ title }}</button>
+            </h2>
+            <div class="accordion-collapse collapse {{ i === 0 ?= 'show' }}" aria-labelledby="heading{{ i }}" data-bs-parent="#accordionFaq"
+              id="accordion-collapse-{{ i }}">
+              <div class="accordion-body">{{ content }}</div>
+            </div>
+          </div>
+          {{ i += 1 }}
+        {{ /section_faq_list }}
+      </div>
+    {{ /if }}
+  </div>
+</section>

@@ -1,0 +1,59 @@
+<div class="modal modal_primary fade" tabindex="-1" id="callback" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal__in">
+
+        {{ if customization:popup_callback_title }}
+          <h2>{{ customization:popup_callback_title | sanitize }}</h2>
+        {{ /if }}
+
+        {{ form:callback }}
+          {{ if success }}
+            <div class="bg-green-300 text-white p-2">
+                {{ success }}
+            </div>
+          {{ else }}
+            {{ if errors }}
+              <div class="bg-red-300 text-white p-2">
+                  {{ errors }}
+                      {{ value }}<br>
+                  {{ /errors }}
+              </div>
+            {{ /if }}
+
+            {{ fields }}
+                <div class="form__group">
+                  <input
+                    class="form-control form-control_primary"
+                    type="{{ input_type }}"
+                    value="{{ value }}"
+                    name="{{ handle }}"
+                  />
+
+                  {{ if error }}
+                    <p class="form__group-txt">{{ error }}</p>
+                  {{ /if }}
+                </div>
+            {{ /fields }}
+
+            <div class="form__group">
+              <label class="form-radio form-radio_primary">
+                <input type="radio" name="policy" value="policy"><span class="form-radio__content"> <span>Я согласен с
+                    условиями и политикой конфедициальности</span></span>
+              </label>
+            </div>
+
+            <input type="hidden" class="hidden" name="{{ honeypot ?? 'honeypot' }}">
+
+            <div class="form__group">
+              <button class="btn btn_primary" type="submit">Заказать звонок</button>
+            </div>
+
+          {{ /if }}
+        {{ /form:callback }}
+
+      </div>
+    </div>
+  </div>
+</div>

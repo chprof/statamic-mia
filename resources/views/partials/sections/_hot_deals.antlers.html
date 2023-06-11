@@ -1,0 +1,17 @@
+<section class="section section_hot-deals">
+  <div class="container">
+    {{ if section_hot_deals_title }}
+      <h2>{{ section_hot_deals_title }}</h2>
+    {{ /if }}
+
+    {{ if section_host_objects_entries }}
+      <div class="section__row row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-2">
+        {{ section_host_objects_entries }}
+          <div class="section__col d-flex flex-column">
+            {{ partial:partials/components/card-object }}
+          </div>
+        {{  /section_host_objects_entries }}
+      </div>
+    {{ /if }}
+  </div>
+</section>

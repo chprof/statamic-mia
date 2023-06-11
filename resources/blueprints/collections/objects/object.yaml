@@ -1,0 +1,146 @@
+tabs:
+  Main:
+    display: Поля
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: featured_image
+            field:
+              max_files: 1
+              mode: list
+              container: assets
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Features Image'
+              icon: assets
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+          -
+            handle: price
+            field:
+              input_type: number
+              antlers: false
+              type: text
+              display: Price
+              icon: text
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+          -
+            handle: object_id
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Object ID'
+              icon: text
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+          -
+            handle: content
+            field:
+              type: markdown
+              localizable: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required
+          -
+            handle: gallery
+            field:
+              max_files: 5
+              mode: list
+              container: assets
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: Gallery
+              icon: assets
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+          -
+            handle: cities
+            field:
+              type: terms
+              taxonomies:
+                - cities
+              display: Cities
+              mode: select
+          -
+            handle: districts
+            field:
+              type: terms
+              taxonomies:
+                - districts
+              display: Districts
+              mode: select
+          -
+            handle: infrastructure
+            field:
+              type: terms
+              taxonomies:
+                - infrastructure
+              display: Infrastructure
+              mode: select
+          -
+            handle: properties
+            field:
+              type: terms
+              taxonomies:
+                - properties
+              display: Properties
+              mode: select
+          -
+            handle: rooms
+            field:
+              type: terms
+              taxonomies:
+                - rooms
+              display: Rooms
+              mode: select
+          -
+            handle: catalogs
+            field:
+              type: terms
+              taxonomies:
+                - catalogs
+              display: Catalogs
+              mode: select
+title: Object

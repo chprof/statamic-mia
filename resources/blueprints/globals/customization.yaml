@@ -1,0 +1,88 @@
+tabs:
+  layout_settings:
+    display: 'Основные настройки'
+    sections:
+      -
+        display: Логотипы
+        fields:
+          -
+            handle: site_logo_primary
+            field:
+              max_files: 1
+              mode: list
+              container: assets
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Site Logo Primary'
+              icon: assets
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+          -
+            handle: site_logo_secondary
+            field:
+              max_files: 1
+              mode: list
+              container: assets
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Site Logo Secondary'
+              icon: assets
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+      -
+        display: 'Контактный номер'
+        fields:
+          -
+            handle: site_company_phone_label
+            field:
+              type: text
+              width: 50
+          -
+            handle: site_company_phone_number
+            field:
+              type: text
+              width: 50
+      -
+        display: 'Контактный email'
+        fields:
+          -
+            handle: site_company_email
+            field:
+              type: text
+      -
+        display: Мессенджеры
+        fields:
+          -
+            handle: site_company_telegram
+            field:
+              type: text
+          -
+            handle: site_company_whatsapp
+            field:
+              type: text
+  popups:
+    display: 'Всплывающие окна'
+    sections:
+      -
+        display: 'Обратный звонок'
+        fields:
+          -
+            handle: popup_callback_title
+            field:
+              type: text
+          -
+            handle: popup_callback_form
+            field:
+              type: text

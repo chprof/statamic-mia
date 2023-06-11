@@ -1,0 +1,64 @@
+<div class="card card_object flex-grow-1">
+  {{# <div class="card__img"> <img src="/img/img-category1.jpg" alt=""></div> #}}
+  <div class="card__img"> <img src="{{ featured_image }}" alt=""></div>
+  <div class="card__body flex-grow-1">
+    <h3>{{ title | sanitize }}</h3>
+    <div class="card__attributes">
+
+      <div class="block block_attribute">
+        <div class="block__name">
+          <svg class="svg-icon">
+            <use xlink:href="/img/svgSprite.svg#icon-world"></use>
+          </svg>
+          <span>Тип Недвижимости:</span>
+        </div>
+        <div class="block__value">
+          {{ properties }} {{ title | sanitize }} {{ /properties }}
+        </div>
+      </div>
+
+      <div class="block block_attribute">
+        <div class="block__name">
+          <svg class="svg-icon">
+            <use xlink:href="/img/svgSprite.svg#icon-pin"></use>
+          </svg>
+          <span>Город:</span>
+        </div>
+        <div class="block__value">
+          {{ cities }} {{ title | sanitize }} {{ /cities }}
+        </div>
+      </div>
+
+      <div class="block block_attribute">
+        <div class="block__name">
+          <svg class="svg-icon">
+            <use xlink:href="/img/svgSprite.svg#icon-pin"></use>
+          </svg>
+          <span>Район:</span>
+        </div>
+        <div class="block__value">
+          {{ districts }} {{ title | sanitize }} {{ /districts }}
+        </div>
+      </div>
+
+      <div class="block block_attribute">
+        <div class="block__name">
+          <svg class="svg-icon">
+            <use xlink:href="/img/svgSprite.svg#icon-bed"></use>
+          </svg>
+          <span>Комнат:</span>
+        </div>
+        <div class="block__value">{{ rooms }} {{ title | sanitize }} {{ /rooms }}</div>
+      </div>
+
+    </div>
+    <div class="mt-auto">
+      {{ if price }}
+        <div class="card__price mb-3">{{ price | sanitize }} €</div>
+        {{ else }}
+        <div class="mb-3">Цена не указана</div>
+      {{ /if }}
+      <div class="card__body-foot"> <a class="btn btn_secondary" href="{{ url | sanitize }}">Подробнее</a></div>
+    </div>
+  </div>
+</div>

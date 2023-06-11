@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title ?? site:name }}</title>
+
+  <link rel="stylesheet" href="/css/vendors/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/vendors/intlTelInput.css">
+  <link rel="stylesheet" href="/css/vendors/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/css/vendors/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  {{ vite src="resources/css/site.css" }}
+</head>
+
+<body class="layout layout_page home">
+
+  {{ partial:header }}
+
+  <div class="layout__content">
+    {{ template_content }}
+  </div>
+
+  {{ partial:footer }}
+
+  {{ partial:partials/modals/callback }}
+
+
+  <script src="/js/vendors/jquery.min.js"></script>
+  <script src="/js/vendors/bootstrap.bundle.min.js"></script>
+  <script src="/js/vendors/intlTelInput.min.js"></script>
+  <script src="/js/vendors/jquery.fancybox.min.js"></script>
+  <script src="/js/vendors/jquery.inputmask.js"></script>
+  <script src="/js/vendors/popper.min.js"></script>
+  <script src="/js/vendors/swiper-bundle.min.js"></script>
+  <script src="/js/main.js"></script>
+  {{ vite src="resources/js/site.js" }}
+</body>
+
+
+</html>

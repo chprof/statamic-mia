@@ -1,0 +1,54 @@
+<footer class="footer footer_primary">
+  <div class="footer__container container">
+    <div class="footer__row">
+
+      {{ partial:partials/components/logo :url="customization:site_logo_secondary" }}
+
+      <div class="footer__wrap">
+
+        {{ partial:partials/components/nav }}
+
+        <div class="footer__socials">
+
+          {{ if customization:site_company_whatsapp }}
+            <a class="btn btn_social" href="https://wa.me/{{ customization:site_company_whatsapp | sanitize }}">
+              <svg class="svg-icon">
+                <use xlink:href="/img/svgSprite.svg#icon-wa"></use>
+              </svg>
+              <span>Whatsapp</span>
+            </a>
+          {{ /if }}
+
+          {{ if customization:site_company_telegram }}
+            <a class="btn btn_social" href="https://t.me/{{ customization:site_company_telegram | sanitize }}">
+              <svg class="svg-icon">
+                <use xlink:href="/img/svgSprite.svg#icon-tg"></use>
+              </svg>
+              <span>Telegram</span>
+            </a>
+          {{ /if }}
+
+        </div>
+      </div>
+
+      <div class="footer__contacts">
+
+        {{ if customization:site_company_phone_number }}
+            <a class="link link_phone" href="tel:+{{ customization:site_company_phone_number | sanitize }}">
+              <svg class="svg-icon">
+                <use xlink:href="/img/svgSprite.svg#icon-phone"></use>
+              </svg>
+              {{ if customization:site_company_phone_label }}
+                <span>{{ customization:site_company_phone_label | sanitize }}</span>
+              {{ /if }}
+            </a>
+          {{ /if }}
+
+        <a class="link link_callback" href="#" data-bs-toggle="modal" data-bs-target="#callback">
+          Заказать звонок
+        </a>
+
+      </div>
+    </div>
+  </div>
+</footer>

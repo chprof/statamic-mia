@@ -1,0 +1,29 @@
+<section class="section section_socials">
+  <div class="container">
+    {{ if section_social_title }}
+      <h2>{{ section_social_title }}</h2>
+    {{ /if }}
+
+    {{ if section_social_list }}
+      <div class="section__row row row-cols-1 row-cols-md-2 row-cols-xl-3 g-2">
+        {{ section_social_list }}
+          <div class="section__col col">
+            <a
+              class="card card_socials"
+              data-fancybox href="{{ url }}"
+            >
+              <div class="card__preview">
+                <img src="{{ poster }}" alt="">
+              </div>
+              <div class="card__play">
+                <svg class="svg-icon">
+                  <use xlink:href="/img/svgSprite.svg#icon-play"></use>
+                </svg>
+              </div>
+            </a>
+          </div>
+        {{ /section_social_list }}
+      </div>
+    {{ /if }}
+  </div>
+</section>

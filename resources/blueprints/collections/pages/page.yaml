@@ -1,0 +1,542 @@
+tabs:
+  main:
+    display: 'Поля для всех страниц'
+    sections:
+      -
+        display: 'Основной контент'
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: content
+            field:
+              type: markdown
+              localizable: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true
+  page_home:
+    display: 'Страница "Главная"'
+    sections:
+      -
+        display: 'Секция "Hero"'
+        fields:
+          -
+            handle: section_hero_bg
+            field:
+              mode: list
+              container: assets
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Фоновое изображение'
+              icon: assets
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+              if:
+                slug: 'equals home'
+      -
+        display: 'Секция "Каталоги"'
+        fields:
+          -
+            handle: section_terms_list
+            field:
+              max_items: 9
+              mode: select
+              create: true
+              taxonomies:
+                - catalogs
+              type: terms
+              display: 'Список терминов'
+              icon: taxonomy
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+              if:
+                slug: 'equals home'
+      -
+        display: 'Секция "Горячие предложения"'
+        fields:
+          -
+            handle: section_hot_deals_title
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Заголовок
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+              if:
+                slug: 'equals home'
+          -
+            handle: section_host_objects_entries
+            field:
+              max_items: 8
+              mode: select
+              create: true
+              collections:
+                - objects
+              type: entries
+              display: 'Список объектов'
+              icon: entries
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+              if:
+                slug: 'equals home'
+      -
+        display: 'Секция "Преимущества"'
+        fields:
+          -
+            handle: section_advantages_title
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Заголовок
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+              if:
+                slug: 'equals home'
+          -
+            handle: section_advantages_list
+            field:
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    mode: list
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    show_filename: true
+                    show_set_alt: true
+                    type: assets
+                    display: Image
+                    icon: assets
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                -
+                  handle: title
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Title
+                    icon: text
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                -
+                  handle: content
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Content
+                    icon: text
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+              mode: stacked
+              reorderable: true
+              fullscreen: true
+              type: grid
+              display: 'Список преимуществ'
+              icon: grid
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+              if:
+                slug: 'equals home'
+      -
+        display: 'Секция "Новые объекты"'
+        fields:
+          -
+            handle: section_new_objects_title
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Заголовок
+              icon: text
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+              if:
+                slug: 'equals home'
+          -
+            handle: section_new_objects_terms
+            field:
+              max_items: 1
+              mode: select
+              type: taxonomies
+              display: 'Список терминов'
+              icon: taxonomy
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+      -
+        display: 'Секция "Почему мы?"'
+        fields:
+          -
+            handle: section_advantage_secondary_title
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Заголовок
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+              if:
+                slug: 'equals home'
+          -
+            handle: section_advantages_secondary_list
+            field:
+              fields:
+                -
+                  handle: title
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Заголовок
+                    icon: text
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                -
+                  handle: content
+                  field:
+                    antlers: false
+                    type: textarea
+                    display: Описание
+                    icon: textarea
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+              mode: stacked
+              reorderable: true
+              fullscreen: true
+              type: grid
+              display: 'Список колонок с контентом'
+              icon: grid
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+              if:
+                slug: 'equals home'
+      -
+        display: 'Секция "Канал на ютубе"'
+        fields:
+          -
+            handle: section_social_title
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Заголовок
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+              if:
+                slug: 'equals home'
+          -
+            handle: section_social_list
+            field:
+              fields:
+                -
+                  handle: poster
+                  field:
+                    max_files: 1
+                    mode: list
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    show_filename: true
+                    show_set_alt: true
+                    type: assets
+                    display: Постер
+                    icon: assets
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                -
+                  handle: url
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: 'Ссылка на ролик с ютуб'
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+              mode: stacked
+              reorderable: true
+              fullscreen: true
+              type: grid
+              display: 'Список роликов с ютуб'
+              icon: grid
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+              if:
+                slug: 'equals home'
+      -
+        display: 'Секция "Баннер"'
+        fields:
+          -
+            handle: section_banner_title
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Заголовок
+              icon: text
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+              if:
+                slug: 'equals home'
+          -
+            handle: section_banner_link_tg
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Ссылка на телеграм'
+              icon: text
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+              if:
+                slug: 'equals home'
+      -
+        display: 'Секция "FAQ"'
+        fields:
+          -
+            handle: section_faq_title
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Заголовок
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+              if:
+                slug: 'equals home'
+          -
+            handle: section_faq_list
+            field:
+              fields:
+                -
+                  handle: title
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Заголовок
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                -
+                  handle: content
+                  field:
+                    antlers: false
+                    type: textarea
+                    display: Описание
+                    icon: textarea
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+              mode: stacked
+              reorderable: true
+              fullscreen: true
+              type: grid
+              display: 'Список FAQ'
+              icon: grid
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+      -
+        display: 'Секция "Отзывы"'
+        fields:
+          -
+            handle: section_reviews_title
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Заголовок
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+              if:
+                slug: 'equals home'
+          -
+            handle: section_reviews_list
+            field:
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    mode: list
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    show_filename: true
+                    show_set_alt: true
+                    type: assets
+                    display: Изображение
+                    icon: assets
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                -
+                  handle: name
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Имя
+                    icon: text
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                -
+                  handle: country
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Страна
+                    icon: text
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                -
+                  handle: date
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Дата
+                    icon: text
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+              mode: stacked
+              reorderable: true
+              fullscreen: true
+              type: grid
+              display: 'Список отзывов'
+              icon: grid
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+              if:
+                slug: 'equals home'
+  page_catalog:
+    display: 'Страница "Каталог"'
+    sections:
+      -
+        display: 'Фильтр или таксономии'
+        fields:
+          -
+            handle: sidebar_taxonomies
+            field:
+              mode: select
+              type: taxonomies
+              display: 'Sidebar Taxonomies'
+              icon: taxonomy
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+              if:
+                slug: 'equals catalog'
+              always_save: false
+title: Page

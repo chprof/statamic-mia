@@ -1,0 +1,18 @@
+<section class="section section_banner-contact">
+  <div class="container">
+    <div class="section__banner">
+      <div class="section__banner-in">
+        <div class="section__banner-head">
+          <div class="logo logo_primary"> <img style="height: 100px;" src="/img/logo2.svg" alt=""></div>
+        </div>
+        {{ if section_banner_title }}
+          <div class="section__banner-content">
+            <h2>{{ section_banner_title | sanitize }}</h2>
+          </div>
+        {{ /if }}
+        <div class="section__banner-foot"><a class="btn btn_primary" href="{{ section_banner_link_tg }}">Подписаться</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

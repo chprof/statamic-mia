@@ -1,0 +1,16 @@
+{{ if section_terms_list }}
+<section class="section section_categories">
+  <div class="container">
+    <div class="section__row row g-2">
+      {{ section_terms_list }}
+        <div class="section__col col">
+          <a class="card card_category" href="{{ url }}">
+            <img src="{{ term_preview_img }}" alt="">
+            <div class="card__title">{{ title | sanitize }}</div>
+          </a>
+        </div>
+      {{ /section_terms_list }}
+    </div>
+  </div>
+</section>
+{{ /if }}

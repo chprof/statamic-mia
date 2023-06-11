@@ -1,0 +1,14 @@
+<div class="sidebar sidebar_primary">
+  <div class="sidebar__in">
+    <div class="sidebar__group">
+
+      <div class="sidebar__attributes-list">
+        {{ taxonomy:catalogs }}
+          <label class="form-radio form-radio_primary">
+            <span><a class="text-decoration-none" data-tax="{{ handle }}" data-term="{{ slug }}" href="{{ url }}">{{ title }}</a></span>
+          </label>
+        {{ /taxonomy:catalogs }}
+      </div>
+    </div>
+  </div>
+</div>

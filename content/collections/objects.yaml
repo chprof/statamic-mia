@@ -1,0 +1,22 @@
+title: Объекты
+template: objects/show
+layout: layout
+taxonomies:
+  - cities
+  - districts
+  - infrastructure
+  - properties
+  - rooms
+  - catalogs
+revisions: false
+route: 'catalog/{slug}'
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
